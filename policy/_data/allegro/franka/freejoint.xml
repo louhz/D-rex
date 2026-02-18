@@ -1,0 +1,12 @@
+        <mujoco>
+          <worldbody>
+            <body>
+              <joint type="free"/>
+              <geom pos="0 0 0" size="0.2" type="sphere"/>
+            </body>
+            <body >
+              <joint type="free"/>
+              <geom pos="0 0.3 0" size="0.11" type="sphere"/>
+            </body>
+          </worldbody>
+        </mujoco>

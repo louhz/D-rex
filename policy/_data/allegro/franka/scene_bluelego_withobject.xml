@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="right_allegro_hand scene">
+  <include file="franka_right_hand.xml" />
+
+  <statistic center="0 0 0" extent="0.3" />
+
+  <visual>
+    <rgba haze="0.15 0.25 0.35 1" />
+    <quality shadowsize="8192" />
+    <global azimuth="130" elevation="-40" />
+    
+
+
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+              
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+    
+    <mesh name="my_mesh" file="bluelego_convex.stl" scale="1 1 1" />
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1" />
+    <light pos="0.3 0 1.5" dir="0 0 -1" directional="true" />
+    <camera name="top" focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"
+            pos="0 0 0.6" mode="fixed" quat="1 0 0 0"/>
+        <camera name="side" focal="1.93e-3 1.93e-3" resolution="1280 720" sensorsize="3896e-6 2140e-6"
+            pos="0 -0.5 0.1" mode="fixed" quat="0.7 0.7 0 0"/>
+    <geom name="floor" pos="0 0 0.05" size="0 0 0.05" type="plane" material="grid"  condim="3"/>
+
+
+	  <body name="mesh_body" pos="0.37 0 0.095" quat="1 0.0 0.0 0.0">
+	    
+	   <freejoint />
+		
+	    <geom name="my_mesh_geom" type="mesh" mesh="my_mesh" condim="3" mass="0.3" friction="0.5 0.005 0.0001" />
+	  </body>
+
+    
+  
+
+    
+  </worldbody>
+  
+  <keyframe>
+  <!-- Set qpos for your 7 Panda joints in the same order they appear as joints 1..7 -->
+  <key name="franka_arm_pose1" 
+       qpos="
+         1.0701593850459352
+        -1.491727978663662
+        -2.007820501938682
+        -2.7025982082099245
+        -0.11599011760950086
+         2.3675351995891996
+         1.1433740201938511
+         0 0 0 0
+         0 0 0 0
+         0 0 0 0
+         0 0 0 0
+         0 0 0 0
+         0 0 0
+       " />
+</keyframe>
+</mujoco>

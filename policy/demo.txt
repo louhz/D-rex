@@ -1,0 +1,7 @@
+# input state of object
+
+
+# output control signal of the robotic hand
+
+
+# need to edit the reward

@@ -1,0 +1,129 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "mass estimator",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_U_density.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator lego",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_Lego.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator domino",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_domino.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator multidomino",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_domino_multi.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator cookie",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_cookie.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator cookie render",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_cookie_render.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator ketchup",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_ketchup.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator A",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_a.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator U2",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_U_density2.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+        {
+            "name": "mass estimator U3",
+            "type": "debugpy",
+            "request": "launch",
+            // Instead of `${file}`, specify the program you want to run:
+            "program": "${workspaceFolder}/diff_obj/mass_estimator_U_density3.py",
+            "console": "integratedTerminal",
+            // If you need to pass arguments (e.g. --log), include them here:
+            "args": [
+                "--log"
+            ]
+        },
+    ]
+}
