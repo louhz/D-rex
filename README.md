@@ -8,7 +8,6 @@ Haozhe Lou · Mingtong Zhang · Haoran Geng · Hanyang Zhou · Sicheng He · Zhi
 **Project page:** https://robot-drex-engine.github.io/  
 **Paper (OpenReview):** https://openreview.net/forum?id=13jshGCK9i
 
-> Note: This project is **not** the CoRL’19 “D-REX” (demonstration ranking) algorithm. This repository is for **D-REX (ICLR 2026)**: a differentiable real-to-sim-to-real engine for dexterous grasping.
 
 ---
 
