@@ -15,7 +15,7 @@ import tkinter as tk
 from tkinter import ttk
 import signal
 import sys
-# 在文件开头设置是否启用GUI
+
 USE_GUI = True
 
 class ImprovedLeapHand:
@@ -217,16 +217,16 @@ class LeapHandGUI:
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
     if USE_GUI:
-        root.quit()  # 停止 tkinter 的主循环
-    sys.exit(0)  # 退出程序
+        root.quit()  
+    sys.exit(0)  
 
 async def main():
-    signal.signal(signal.SIGINT, signal_handler)  # 注册信号处理函数
+    signal.signal(signal.SIGINT, signal_handler) 
 
     leap_hand_handler = LeapHandHandler()
     
     if USE_GUI:
-        global root  # 使 root 成为全局变量，以便在 signal_handler 中访问
+        global root  
         root = tk.Tk()
         app = LeapHandGUI(root, leap_hand_handler)
         try:
@@ -261,7 +261,7 @@ async def main():
                 break
 
     print("Cleaning up...")
-    # 在这里添加任何必要的清理代码，比如关闭连接等
+    
     if leap_hand_handler.available:
         leap_hand_handler.leap_hand.dxl_client.disconnect()
 
