@@ -12,3 +12,4 @@ Data processing and filtering
 
 
 
+install hamor, mcc-ho and manotorch for the learn from human 

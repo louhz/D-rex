@@ -2,7 +2,7 @@
 import numpy as np
 import trimesh
 
-mesh = trimesh.load("/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/assets/A.stl")
+mesh = trimesh.load("./policy/_data/allegro/wonik_allegro/assets/A.stl")
 
 
 threshold = 0.001
@@ -27,4 +27,4 @@ submesh.update_faces(faces_mask)
 submesh.remove_unreferenced_vertices()
 
 # 7. Export the submesh to a new file
-submesh.export("/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/assets/A_clean_new.stl")
+submesh.export("./policy/_data/allegro/wonik_allegro/assets/A_clean_new.stl")

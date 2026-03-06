@@ -719,7 +719,7 @@ if __name__ == "__main__":
     # Load the mesh from STL/OBJ using trimesh
     mesh_path = "./wonik_allegro/assets/ketchup.stl"
     
-    # out_path = "/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/assets/U_simplified.obj"
+    # out_path = "./policy/_data/allegro/wonik_allegro/assets/U_simplified.obj"
     
     mesh = o3d.io.read_triangle_mesh(mesh_path)
    

@@ -780,9 +780,9 @@ if __name__ == "__main__":
         return (vertices - (min_vals + max_vals) / 2) / (max_vals - min_vals).max()
 
     # Load the mesh from STL/OBJ using trimesh
-    mesh_path = "/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/U.stl"
+    mesh_path = "./policy/_data/allegro/wonik_allegro/U.stl"
     
-    # out_path = "/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/assets/U_simplified.obj"
+    # out_path = "./policy/_data/allegro/wonik_allegro/assets/U_simplified.obj"
     
     mesh = o3d.io.read_triangle_mesh(mesh_path)
    
@@ -862,9 +862,9 @@ if __name__ == "__main__":
     #GT sim is from foundationpose
 
 
-    xml_path = '/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/scene_U.xml'
-    control_signal_path = '/home/haozhe/Dropbox/physics/u2_sequence/2/joint_states_log.csv'
-    gt_path = '/home/haozhe/Dropbox/physics/u2_sequence/path_full_up_2/target_U_20250423_1729.txt'
+    xml_path = './policy/_data/allegro/wonik_allegro/scene_U.xml'
+    control_signal_path = './policy/u2_sequence/2/joint_states_log.csv'
+    gt_path = './policy/u2_sequence/path_full_up_2/target_U_20250423_1729.txt'
 
     # Load Allegro glove joint states
     control_signal = load_position_data(control_signal_path)

@@ -54,7 +54,7 @@ def run_inference():
     # 3) (Optional) Recreate environment
     # ------------------------------------------------
     # If you want to actually test the predicted actions in MuJoCo:
-    xml_file = "/home/haozhe/Dropbox/physics/_data/leap_hand/scene_nuetella.xml"
+    xml_file = "./policy/_data/leap_hand/scene_nuetella.xml"
     env = HandEnv(
         model_xml_path=xml_file, 
         action_dim=16,

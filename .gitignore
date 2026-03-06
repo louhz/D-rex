@@ -287,3 +287,6 @@ examples/cache/
 .idea/
 *.DS_Store
 examples/h5
+
+
+data/

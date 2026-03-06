@@ -54,7 +54,7 @@ def run_inference():
     # 3) (Optional) Recreate environment
     # ------------------------------------------------
     # If you want to actually test the predicted actions in MuJoCo:
-    xml_file = "/home/haozhe/Dropbox/physics/_data/leap_hand/scene_U.xml"
+    xml_file = "./policy_data/leap_hand/scene_U.xml"
     env = HandEnv(
         model_xml_path=xml_file, 
         action_dim=16,
@@ -68,7 +68,7 @@ def run_inference():
     # For example, if you want to run on new data, you can
     # create a dataset or just a single input.  
     # Here, we’ll reuse the Phase1Dataset or pick one sample from it:
-    gt_mesh_path = '/home/haozhe/Dropbox/physics/_data/leap_hand/assets/U.ply'
+    gt_mesh_path = './policy_data/leap_hand/assets/U.ply'
     gt_control_path = '/home/haozhe/Dropbox/imitationlearning/U_Pick_and_Place/hand_data_hamer_distilled/leap_batched_output.npy'
     inference_dataset = Phase1Dataset(
         gt_mesh_path, 

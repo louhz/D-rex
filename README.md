@@ -5,7 +5,7 @@ Official repository for the ICLR 2026 paper:
 **D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping**  
 Haozhe Lou · Mingtong Zhang · Haoran Geng · Hanyang Zhou · Sicheng He · Zhiyuan Gao · Siheng Zhao · Jiageng Mao · Pieter Abbeel · Jitendra Malik · Daniel Seita · Yue Wang
 
-**Project page:** https://robot-drex-engine.github.io/  
+**Project page:** https://louhz.github.io/drex.github.io/
 **Paper (OpenReview):** https://openreview.net/forum?id=13jshGCK9i
 
 
@@ -82,9 +82,81 @@ The project page includes additional qualitative results:
 
 ---
 
+
+
+
+
+
 ## Getting started
 
 ### 1) Clone
 ```bash
 git clone <THIS_REPO_URL>
 cd D-rex
+```
+
+## Install submodules
+
+### Manotorch
+
+
+### Hamor
+
+### Mcc-ho
+
+### colmap
+
+### Gsplat 
+
+
+## Dataset
+
+### Human demonstration
+https://www.dropbox.com/scl/fo/xexfduqcxrnhtrirl5r8g/AFgcoI22K2MwssvtutWUv_A?rlkey=vvtqbj5kzsmjmpq40v4lj6raq&st=t8yhcjfd&dl=0
+
+### Real2sim Reconstruction
+https://www.dropbox.com/scl/fo/cnla4b164gff7bdiswbdx/AKFDFTeI7I_oL9NLA5vQCNo?rlkey=j2hn2twi7uave36r64gi8gwyt&st=cu38u7p0&dl=0
+
+### Mass Identification
+https://www.dropbox.com/scl/fo/nccdsq367ydvj7cw57rgx/AIRh1sTwnVpcQmBu2Hz8ako?rlkey=cn0b1a229ykbt9a1yqdkztwdc&st=ziyghiem&dl=0
+
+
+
+
+
+
+For the real2sim dataset you are input the 360 degree video and obtain the final asset
+
+For the human demonstration you will have the grasping demonstration and have the retargeted robotic motion
+
+
+For mass identification, you will input control signal , asset from real2sim and the object trajectory by foundation pose, obtain the final mass
+
+
+
+## Policy learning and sim2real
+Then use the learned parameter and retargeted control signal for learning and deploy to real world leap hand. 
+
+
+
+you can put this data in the proper place 
+
+
+# Todo
+
+replace path
+
+add hamar, mccho and relative pose codebase
+
+
+
+
+rewrite config
+
+
+clean up readme and comment
+
+
+test conda 
+
+

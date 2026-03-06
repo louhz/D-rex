@@ -185,7 +185,7 @@ def load_data(dataset_dir, num_episodes, camera_names, batch_size_train, batch_s
 
 def load_data_from_teleop(dataset_dir,
                           xml_path,
-                          mesh_path="/home/haozhe/Dropbox/physics/_data/allegro/wonik_allegro/assets/bluelego_convex.stl", 
+                          mesh_path="./policy/_data/allegro/wonik_allegro/assets/bluelego_convex.stl", 
                           dt=0.002):
     # in the dataset dir, there will be sequences of data range from 0 to 10
     # in each folder, there will be a robot_state.txt, load from it and you will 

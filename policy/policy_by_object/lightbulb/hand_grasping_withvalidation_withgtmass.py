@@ -656,7 +656,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Create the MuJoCo environment
-    xml_file = "/home/haozhe/Dropbox/physics/_data/leap_hand/scene_lightbulb.xml"
+    xml_file = "./policy/_data/leap_hand/scene_lightbulb.xml"
     gt_mesh_path='/home/haozhe/lightbulb.ply'
     gt_control_path='/home/haozhe/Dropbox/imitationlearning/lightbulb_pick_place/leap_batched_output.npy'
     env = HandEnv(model_xml_path=xml_file, action_dim=16, frame_skip=5, episode_length=20)
