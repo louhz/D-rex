@@ -69,7 +69,7 @@ def run_inference():
     # create a dataset or just a single input.  
     # Here, we’ll reuse the Phase1Dataset or pick one sample from it:
     gt_mesh_path = '/home/haozhe/cube.ply'
-    gt_control_path = '/home/haozhe/Dropbox/imitationlearning/Cube_Pick_and_Place/leap_batched_output.npy'
+    gt_control_path = 'data/human_demonstration/Cube_Pick_and_Place/leap_batched_output.npy'
     inference_dataset = Phase1Dataset(
         gt_mesh_path, 
         gt_control_path, 

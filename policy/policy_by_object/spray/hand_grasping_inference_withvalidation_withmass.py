@@ -69,7 +69,7 @@ def run_inference():
     # create a dataset or just a single input.  
     # Here, we’ll reuse the Phase1Dataset or pick one sample from it:
     gt_mesh_path = '/home/haozhe/spray.ply'
-    gt_control_path = '/home/haozhe/Dropbox/imitationlearning/spray_seq_pick_place/leap_batched_output_40.npy'
+    gt_control_path = 'data/human_demonstration/spray_seq_pick_place/leap_batched_output_40.npy'
     inference_dataset = Phase1Dataset(
         gt_mesh_path, 
         gt_control_path, 

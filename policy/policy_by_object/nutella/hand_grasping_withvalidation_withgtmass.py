@@ -658,7 +658,7 @@ def main():
     # Create the MuJoCo environment
     xml_file = "./policy/_data/leap_hand/scene_nuetella.xml"
     gt_mesh_path='/home/haozhe/nuetella.ply'
-    gt_control_path='/home/haozhe/Dropbox/imitationlearning/nutella_pick_and_place/leap_batched_output.npy'
+    gt_control_path='data/human_demonstration/nutella_pick_and_place/leap_batched_output.npy'
     env = HandEnv(model_xml_path=xml_file, action_dim=16, frame_skip=5, episode_length=20)
 
     # Create the model (20D output)

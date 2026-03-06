@@ -1,0 +1,77 @@
+# Python version is managed outside pip: use Python 3.10
+# Match the CUDA 11.8 PyTorch wheel index.
+# PyTorch's official pip combo for torch 2.0.0 + CUDA 11.8 uses torchvision 0.15.1,
+# even though the conda env used torchvision 0.15.0.
+--index-url https://download.pytorch.org/whl/cu118
+--extra-index-url https://pypi.org/simple
+
+# Core ML / numerics
+numpy<2
+packaging==23.0
+PyYAML==6.0
+h5py==3.8.0
+matplotlib==3.7.1
+ipython==8.12.0
+pandas
+imageio
+mediapy
+tqdm
+
+# PyTorch
+torch==2.0.0
+torchvision==0.15.1
+
+# Robotics / simulation
+pyquaternion==0.9.9
+rospkg==1.5.0
+pexpect==4.8.0
+mujoco==2.3.3
+dm-control==1.0.9
+
+# Vision / geometry
+opencv-python==4.7.0.72
+open3d
+plyfile
+trimesh
+scikit-image
+pyrender
+smplx==0.1.28
+yacs
+gdown
+plotly
+omegaconf
+iopath
+
+# HaMeR extras (from the official repo setup.py)
+pytorch-lightning
+mmcv==1.3.9
+timm
+einops==0.6.0
+xtcocotools
+hydra-core
+hydra-submitit-launcher
+hydra-colorlog
+pyrootutils
+rich
+webdataset
+detectron2 @ git+https://github.com/facebookresearch/detectron2
+chumpy @ git+https://github.com/mattloper/chumpy
+
+# Transformers
+transformers
+accelerate
+
+# Notes for packages that are usually installed separately because they are version-sensitive:
+# 1) PyTorch3D is required by MCC-HO demos, but current official PyTorch3D install docs target newer
+#    PyTorch versions than 2.0.0. Install a matching PyTorch3D build separately if pip install fails.
+# pytorch3d
+#
+# 2) HaMeR's demo stack also expects the ViTPose submodule / MMPose stack.
+#    The HaMeR repo recommends installing it separately:
+#    pip install -v -e third-party/ViTPose
+#
+# 3) mujoco-mjx is a separate package that starts with MuJoCo 3.x and will conflict with mujoco==2.3.3.
+#    Put it in a separate environment or upgrade mujoco if you need MJX.
+# mujoco-mjx
+# jax
+# jaxlib

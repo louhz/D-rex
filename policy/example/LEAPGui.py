@@ -2,8 +2,8 @@
 import os
 import sys
 
-# Append the scripts folder to Python's search path
-sys.path.append("/home/haozhe/leap_ws/src/ros2_module/scripts")
+# Append the scripts folder to Python's search path, for the leaphand control path you put in 
+sys.path.append("./leap_ws/src/ros2_module/scripts")
 
 import numpy as np
 from leap_hand_utils.dynamixel_client import DynamixelClient

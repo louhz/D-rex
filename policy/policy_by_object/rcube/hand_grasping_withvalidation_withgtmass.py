@@ -658,7 +658,7 @@ def main():
     # Create the MuJoCo environment
     xml_file = "./policy/_data/leap_hand/scene_cube.xml"
     gt_mesh_path='/home/haozhe/cube.ply'
-    gt_control_path='/home/haozhe/Dropbox/imitationlearning/Cube_Pick_and_Place/leap_batched_output.npy'
+    gt_control_path='data/human_demonstration/Cube_Pick_and_Place/leap_batched_output.npy'
     env = HandEnv(model_xml_path=xml_file, action_dim=16, frame_skip=5, episode_length=20)
 
     # Create the model (20D output)
