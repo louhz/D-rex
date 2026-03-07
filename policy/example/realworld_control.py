@@ -303,6 +303,8 @@ action_array=np.array([ 0.0297336 ,  0.15594059 , 1.0997438 ,  0.6966978 ,  0.26
 # ])
 
 
+
+# scale mapping for the beta of the human hand scale and the dexterous hand scale
 old_min, old_max = -1.47, 1.47
 new_min, new_max = -0.5, 0.5
 

@@ -99,14 +99,25 @@ cd D-rex
 
 ### Manotorch
 
+Please follow the https://github.com/lixiny/manotorch for the installtion and checkpoint download
+And put the downloaded checkpoint to the proper path for learn from human retargeting
+```bash
+mano_assets_root="./manotorch/assets/mano"
+```
 
-### Hamor
 
 ### Mcc-ho
 
 ### colmap
+Please follow the https://github.com/colmap/colmap for install
 
 ### Gsplat 
+
+
+You can find the example for rendering and reconstruction in 
+https://github.com/louhz/robogs
+And the download instruction. Only minimum code for physically consistent rendering is added in this repo
+
 
 
 ## Dataset
@@ -142,12 +153,18 @@ Then use the learned parameter and retargeted control signal for learning and de
 you can put this data in the proper place 
 
 
+
+## Implementation details and current method drawbacks:
+
+1: For the human hand retargeting, the Hamor only learns the relative scale instead of the absolute scale, thus, we need manually align and fix the human hand scale gap for different human manipulation data source, we hope this can be solved by following word. 
+
+2: For the system identification, the mj_model and mj_data cannot save the running process information, thus, we decide to use a txt to save the rollout information and load it again for system identification. A smarter engineering trick can help for the code clearance and optimization speed.
+
+3: The crop and obtain of the object mesh and gaussian splat can be finished by SAM3D with accurete depth scale, we never test this method but it is promising to test this for future data collection and system work.
+
 # Todo
 
 replace path
-
-add hamar, mccho and relative pose codebase
-
 
 
 
@@ -157,6 +174,5 @@ rewrite config
 clean up readme and comment
 
 
-test conda 
 
 
