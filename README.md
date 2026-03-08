@@ -89,17 +89,35 @@ The project page includes additional qualitative results:
 
 ## Getting started
 
-### 1) Clone
+
 ```bash
-git clone <THIS_REPO_URL>
+git clone https://github.com/louhz/D-rex
 cd D-rex
+conda create -n drex python=3.10
+conda activate drex
 ```
 
+### Install PyTorch with CUDA
+
+Install cudatoolkit, we recommend cuda 12.8
+We recommend installing PyTorch **inside the `drex` conda environment** after activation.
+
+**CUDA 12.8**
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+pip install --no-build-isolation 'git+https://github.com/facebookresearch/detectron2.git'
+pip install --no-build-isolation 'git+https://github.com/mattloper/chumpy'
+```
+
+Then install necessary packages:
+```bash
+pip install -r requirements.txt
+```
 ## Install submodules
 
 ### Manotorch
 
-Please follow the https://github.com/lixiny/manotorch for the installtion and checkpoint download
+Please follow the https://github.com/lixiny/manotorch for the installtion and checkpoint download.
 And put the downloaded checkpoint to the proper path for learn from human retargeting
 ```bash
 mano_assets_root="./manotorch/assets/mano"
@@ -107,6 +125,8 @@ mano_assets_root="./manotorch/assets/mano"
 
 
 ### Mcc-ho
+Please follow https://github.com/janehwu/mcc-ho for install.
+If the pytorch3d is unable to install with drex main environment, please build a seperate environment for mccho specifically, this is just part for data generation. 
 
 ### colmap
 Please follow the https://github.com/colmap/colmap for install
@@ -144,19 +164,48 @@ For the human demonstration you will have the grasping demonstration and have th
 For mass identification, you will input control signal , asset from real2sim and the object trajectory by foundation pose, obtain the final mass
 
 
+## Running command
 
-## Policy learning and sim2real
-Then use the learned parameter and retargeted control signal for learning and deploy to real world leap hand. 
+We take Cookie as an example for our whole pipeline
+
+**Real2sim**
+The first step is to reconstruct mesh and gaussian splat for real2sim.
+Then put it to proper place in the _data, like policy/_data/leap_hand/scene_cookie.xml
+
+**Learn from Human**
+Process the demonstration video with Hamor and Mcc-ho, after this, you will have the process_leap_data.npy for the grasping control command for the dexterous hand and the relative pose between the object and the hand 
+
+**Mass Identification**
+Load the object trajectory by foundationpose and the robot control signal
+run the simulation for 
+```bash
+python system_id/diff_obj/mass_estimator_cookie.py
+```
+Obtain the final mass value
+
+**Policy Learning**
+
+Run for training
+```bash
+python policy/policy_by_object/cookie/onnxgrasp.py
+```
+Inference
+```bash
+python policy/policy_by_object/cookie/onnxgrasp_infe.py
+```
 
 
 
-you can put this data in the proper place 
-
+## Sim2real
+The real world control script can be find here, please install the leap_hand module from the official website
+```bash
+python policy/policy_by_object/cookie/realworld_control.py
+```
 
 
 ## Implementation details and current method drawbacks:
 
-1: For the human hand retargeting, the Hamor only learns the relative scale instead of the absolute scale, thus, we need manually align and fix the human hand scale gap for different human manipulation data source, we hope this can be solved by following word. 
+1: For the human hand retargeting, the Hamor only learns the relative scale instead of the absolute scale, thus, we need manually align and fix the human hand scale gap for different human manipulation data source, we hope this can be solved by following work. 
 
 2: For the system identification, the mj_model and mj_data cannot save the running process information, thus, we decide to use a txt to save the rollout information and load it again for system identification. A smarter engineering trick can help for the code clearance and optimization speed.
 

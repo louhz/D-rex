@@ -2,64 +2,47 @@
 # Match the CUDA 11.8 PyTorch wheel index.
 # PyTorch's official pip combo for torch 2.0.0 + CUDA 11.8 uses torchvision 0.15.1,
 # even though the conda env used torchvision 0.15.0.
---index-url https://download.pytorch.org/whl/cu118
+
 --extra-index-url https://pypi.org/simple
 
 # Core ML / numerics
-numpy<2
-packaging==23.0
-PyYAML==6.0
-h5py==3.8.0
-matplotlib==3.7.1
-ipython==8.12.0
+numpy
+packaging
+PyYAML
+h5py
+matplotlib
+ipython
 pandas
 imageio
 mediapy
 tqdm
 
-# PyTorch
-torch==2.0.0
-torchvision==0.15.1
+
 
 # Robotics / simulation
-pyquaternion==0.9.9
-rospkg==1.5.0
-pexpect==4.8.0
-mujoco==2.3.3
-dm-control==1.0.9
+pyquaternion
+rospkg
+pexpect
+MuJoCo
+dm-control
 
 # Vision / geometry
-opencv-python==4.7.0.72
+opencv-python
 open3d
 plyfile
 trimesh
 scikit-image
 pyrender
-smplx==0.1.28
+smplx
 yacs
 gdown
 plotly
 omegaconf
 iopath
 
-# HaMeR extras (from the official repo setup.py)
-pytorch-lightning
-mmcv==1.3.9
-timm
-einops==0.6.0
-xtcocotools
-hydra-core
-hydra-submitit-launcher
-hydra-colorlog
-pyrootutils
-rich
-webdataset
-detectron2 @ git+https://github.com/facebookresearch/detectron2
-chumpy @ git+https://github.com/mattloper/chumpy
 
-# Transformers
-transformers
-accelerate
+
+
 
 # Notes for packages that are usually installed separately because they are version-sensitive:
 # 1) PyTorch3D is required by MCC-HO demos, but current official PyTorch3D install docs target newer
