@@ -39,9 +39,9 @@ gdown
 plotly
 omegaconf
 iopath
-
-
-
+pickle
+pygame
+socket
 
 
 # Notes for packages that are usually installed separately because they are version-sensitive:
