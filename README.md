@@ -85,6 +85,9 @@ The project page includes additional qualitative results:
 
 
 
+# Note 
+This codebase has not been fully tested with the compatiblity, I will try to setup this pipeline on a new set of franka-leap and desktop for the consistency and clearity, the config is pretty noisy now and i will clear this up later
+
 
 
 ## Getting started
@@ -222,6 +225,8 @@ rewrite config
 
 clean up readme and comment
 
+
+Final integration
 
 
 
